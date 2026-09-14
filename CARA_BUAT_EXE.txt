@@ -1,0 +1,39 @@
+CARA MENJALANKAN & MEMBUAT .EXE (WINDOWS)
+==========================================
+
+1) LANGSUNG DIJALANKAN (tanpa exe dulu, untuk cek dulu)
+   - Install Python 3 dari https://www.python.org/downloads/
+     (saat instalasi, centang "Add python.exe to PATH")
+   - Buka folder ini, klik kanan > "Open in Terminal" (atau buka cmd lalu cd ke folder ini)
+   - Jalankan:
+       python countdown_timer.py
+
+2) MENGUBAH JADI FILE .EXE
+   - Di terminal/cmd yang sama, install PyInstaller:
+       pip install pyinstaller
+
+   - Build exe dengan perintah:
+       pyinstaller --onefile --windowed --name CountdownTimer countdown_timer.py
+
+   - Tunggu proses selesai. Hasil file exe ada di:
+       dist\CountdownTimer.exe
+
+   - File itu sudah bisa dipakai/di-copy ke komputer Windows lain
+     tanpa perlu install Python (single file, portable).
+
+CARA PAKAI APLIKASINYA
+=======================
+- Saat dibuka: muncul kotak kecil untuk mengisi menit (mm) dan detik (ss), lalu klik "Mulai"
+  (atau tekan Enter).
+- Layar akan berubah full screen, background hitam, tulisan putih, hitung mundur.
+- Saat mencapai 00:00, layar berubah merah dengan tulisan putih "TIME'S UP!".
+- Tekan Esc kapan saja untuk keluar dari aplikasi.
+- Tekan tombol "r" atau klik layar saat sedang berjalan/selesai untuk kembali
+  ke layar pengaturan waktu (mengatur ulang timer baru).
+
+CATATAN
+========
+- Aplikasi ini pakai tkinter, yang sudah termasuk bawaan di instalasi Python
+  resmi untuk Windows, jadi tidak perlu install library tambahan selain PyInstaller.
+- Kalau mau ganti ukuran huruf/warna, edit langsung file countdown_timer.py
+  lalu build ulang dengan pyinstaller.
